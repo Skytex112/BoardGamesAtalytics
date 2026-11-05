@@ -39,7 +39,6 @@ namespace BoardGamesAtalytics
             else { Console.WriteLine("Entered something else , try again"); Menu(connection); }
         }
 
-        //Дома доробити цей код від ГПТ.
 
         private static void ShowGeneralStats(SqlConnection connection, DateTime? startDate = null, DateTime? endDate = null)
         {
@@ -47,7 +46,6 @@ namespace BoardGamesAtalytics
 
             if (startDate.HasValue && endDate.HasValue)
             {
-                //Asked GPT to fix my mistakes.
                 query = @"
             SELECT COUNT(*) AS TotalSessions, SUM(DurationMinutes) AS TotalDurationMinutes
             FROM Sessions
@@ -55,7 +53,6 @@ namespace BoardGamesAtalytics
             }
             else
             {
-                //Asked GPT to fix my mistakes.
                 query = @"
             SELECT COUNT(*) AS TotalSessions, SUM(DurationMinutes) AS TotalDurationMinutes
             FROM Sessions;";
